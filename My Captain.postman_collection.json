@@ -1,0 +1,75 @@
+{
+	"id": "98287522-d2f4-0ce2-26b3-24798c12da61",
+	"name": "My Captain",
+	"description": "",
+	"order": [
+		"a1e9c6dc-eee3-f847-e7fc-e92a5e5bb33d",
+		"17475c8a-80a1-6782-5e29-1e4f2861a2f1"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1659955427843,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "17475c8a-80a1-6782-5e29-1e4f2861a2f1",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1:8000/api/bookings/read",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "98287522-d2f4-0ce2-26b3-24798c12da61",
+			"data": null,
+			"dataMode": "params",
+			"name": "Read",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1659955446709,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "a1e9c6dc-eee3-f847-e7fc-e92a5e5bb33d",
+			"headers": "",
+			"headerData": [],
+			"url": "http://127.0.0.1:8000/api/bookings/create",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "date",
+					"value": "10/8/2022",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "numOfGuests",
+					"value": "6",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1659957649647,
+			"name": "Book",
+			"description": "",
+			"collectionId": "98287522-d2f4-0ce2-26b3-24798c12da61",
+			"responses": []
+		}
+	]
+}
