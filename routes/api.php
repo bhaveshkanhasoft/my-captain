@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::prefix('bookings')->group(function () {
-	Route::post('/create', [BookingsController::class, 'store']);
-	Route::get('/read', [BookingsController::class, 'index'])->name('booking-read');
+	Route::post('/create', [BookingsController::class, 'create']);
+	Route::get('/read', [BookingsController::class, 'read'])->name('booking-read');
 });

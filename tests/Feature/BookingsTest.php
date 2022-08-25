@@ -8,7 +8,7 @@ use Tests\TestCase;
 class BookingsTest extends TestCase
 {
 	/**
-	 * A test to check booking list response
+	 * A test to check booking list response.
 	 *
 	 * @return void
 	 */
