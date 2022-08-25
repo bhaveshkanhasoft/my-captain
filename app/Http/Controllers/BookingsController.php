@@ -6,7 +6,6 @@ use App\Models\Bookings;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Validator;
 
 class BookingsController extends Controller
@@ -18,7 +17,7 @@ class BookingsController extends Controller
 	 */
 	public static function read(): array
 	{
-        	return Bookings::readAllBookings();
+		return Bookings::readAllBookings();
 	}
 
 	/**
@@ -33,8 +32,8 @@ class BookingsController extends Controller
 		$validator = Validator::make( $validate_field, [
 			Bookings::DATE_LABEL => 'required|bookable_date',
 			Bookings::NUMBER_OF_GUESTS_LABEL => 'required|max:8',
-        	],
-        	[
+		],
+		[
 			'date.bookable_date'=> 'You can not proceed with the selected booking date, please select another date.',
 		]);
 
@@ -44,10 +43,10 @@ class BookingsController extends Controller
 
 		$currentBookings = Bookings::getCurrentBookings();
 		$values = $request->all();
-		$values[ 'created_at' ] = Carbon::now()->format( 'Y-m-d' );
+		$values[ 'created_at' ] = Carbon::now()->format( 'd/m/Y' );
 		$currentBookings[] = $values;
 		$msg = "Booking has been made successfully.";
-		Redis::set( Bookings::CACHE_KEY, json_encode( $currentBookings ) );
+		Bookings::setNewBooking( $currentBookings );
 		
 		return response()->json( [ 'msg' => $msg ] );
 	}
